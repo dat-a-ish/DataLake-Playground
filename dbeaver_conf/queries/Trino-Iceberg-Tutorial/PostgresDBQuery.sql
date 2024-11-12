@@ -1,0 +1,1 @@
+select * from test_schema.test_table_from_iceberg ttfi;
