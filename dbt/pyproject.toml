@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "runningdbtwithtrino"
+version = "0.1.0"
+description = ""
+authors = ["Egor Tarasenko <egorseno7@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dbt-core = "1.8.2"
+dbt-trino = "1.8.3"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

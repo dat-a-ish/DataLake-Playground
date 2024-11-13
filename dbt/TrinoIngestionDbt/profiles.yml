@@ -1,0 +1,12 @@
+TrinoIngestionDbt:
+  outputs:
+    dev:
+      database: iceberg_datalake
+      host: localhost
+      method: none
+      port: 8080
+      schema: dbt
+      threads: 1
+      type: trino
+      user: admin
+  target: dev

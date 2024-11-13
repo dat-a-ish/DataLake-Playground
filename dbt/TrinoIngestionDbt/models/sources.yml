@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: postgres
+    database: postgres
+    schema: test_schema
+    tables:
+      - name: test_table_from_iceberg
+
