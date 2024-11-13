@@ -82,7 +82,9 @@ services:
 
   spark:
     image: bitnami/spark:3.5.1
-    container_name: spark-master
+    container_name: spark
+    networks:
+      data-lake-network:
     environment:
       - SPARK_MODE=master
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
@@ -99,6 +101,8 @@ services:
   spark-worker:
     image: bitnami/spark:3.5.1
     container_name: spark-worker
+    networks:
+      data-lake-network:
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
