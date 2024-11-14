@@ -4,3 +4,4 @@ VALUES
     (2, 'Bob', TIMESTAMP '2024-11-10 13:00:00');
 
 
+delete from iceberg_datalake.test_schema.test_table ;
