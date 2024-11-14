@@ -20,6 +20,7 @@ services:
       - "./trino/trino_connections/iceberg_datalake.properties:/etc/trino/catalog/iceberg_datalake.properties"
       - "./trino/trino_connections/postgres.properties:/etc/trino/catalog/postgres.properties"
       - "./trino/trino_connections/http.properties:/etc/trino/catalog/http.properties"
+      - "./trino/trino_connections/local_http.properties:/etc/trino/catalog/local_http.properties"
       - "./trino/coordinator-config.properties:/etc/trino/config.properties"
 
   trino-worker:
@@ -30,6 +31,7 @@ services:
       - "./trino/trino_connections/iceberg_datalake.properties:/etc/trino/catalog/iceberg_datalake.properties"
       - "./trino/trino_connections/postgres.properties:/etc/trino/catalog/postgres.properties"
       - "./trino/trino_connections/http.properties:/etc/trino/catalog/http.properties"
+      - "./trino/trino_connections/local_http.properties:/etc/trino/catalog/local_http.properties"
       - "./trino/worker-1/worker-config.properties:/etc/trino/config.properties"
 
   storage:
