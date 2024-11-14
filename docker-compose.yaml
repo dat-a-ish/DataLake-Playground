@@ -17,8 +17,8 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - "./trino_connections/iceberg_datalake.properties:/etc/trino/catalog/iceberg_datalake.properties"
-      - "./trino_connections/postgres.properties:/etc/trino/catalog/postgres.properties"
+      - "./trino/trino_connections/iceberg_datalake.properties:/etc/trino/catalog/iceberg_datalake.properties"
+      - "./trino/trino_connections/postgres.properties:/etc/trino/catalog/postgres.properties"
 
   storage:
     image: minio/minio
