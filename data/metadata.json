@@ -1,0 +1,20 @@
+{
+    "example": [
+        {
+            "name": "numbers",
+            "columns": [
+                {
+                    "name": "text",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "value",
+                    "type": "BIGINT"
+                }
+            ],
+            "sources": [ 
+                "numbers-1.json"
+            ]
+        }
+    ]
+}
