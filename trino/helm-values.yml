@@ -56,7 +56,7 @@ server:
     # -- Trino supports multiple [authentication
     # types](https://trino.io/docs/current/security/authentication-types.html):
     # PASSWORD, CERTIFICATE, OAUTH2, JWT, KERBEROS.
-    authenticationType: ""
+    authenticationType: PASSWORD
     query:
       maxMemory: "4GB"
   exchangeManager: {}
@@ -254,13 +254,13 @@ additionalNodeProperties: []
 #  - node.id=${NODE_ID}
 # ```
 
-additionalConfigProperties: []
+additionalConfigProperties:
 # additionalConfigProperties -- [Additional config
 # properties](https://trino.io/docs/current/admin/properties.html).
 # @raw
 # Example:
 # ```yaml
-#  - internal-communication.shared-secret=random-value-999
+  - internal-communication.shared-secret=ctm0WeCIrpSjeDriB3E+6erElcY1fTLMRkFArAxnSOhvHN/2KW4S5fY6tJa9t62lY3vAvSIP58v6AEfGyAXKMrT8NJjLHjVBQVnqLHBL60B19c9Sk3yljJE4pCClL0ktEdCT31EdzF/BHw/7mqV3Ie/9LN7xAcEJg8yQRHpP8/L5gQMvxkDSwHEweZ5a2aimAOeI5PetJhNrZsO3ELqpza18d5JnPeyX66m6Lb80Dt4DRRkzWcXaTt9mO1PQF7hR4SdTgJgm8FBSwOWwxoTLm5qCllHDSy+2zJMRjqpjz48Bsc2ACuQqMfowxU5DNtyxw+IWdMhwUrBICW8Qx3TPK7MuuBIbjYB/xtHi7K9pvw00Cn8Lo4Nne6MRbBM38wA27G0ekp6g19gKTXS6dyxj/y6ImUasN+iqzWZurIUOZ72sqFxFTrUQ/UldazFvk/7xNJK0vModzX4kfitlQth9a7l6gIc23WdxTI3Xtgd+M5L4ww0TgY0U3QHJDDMo/voWbAdoR8qBpY9EMAChLxnN6DMUV/W9lj6oDx8ydGPpt5ld6hrUAnDbEbUX1B/8HSPW97WgnmhSbC+VbvjQEQwrIYNUpchhQt3wvB1dPswZgeevVLKGY9gEcxSKwXQw08LINw7zdEIqtnBBgkPmvRoL71hJm2i5zss8xoPF4+vLMwI=
 #  - http-server.process-forwarded=true
 # ```
 
@@ -412,7 +412,8 @@ service:
   # automatically](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport-custom-port).
   nodePort: ""
 
-auth: {}
+auth:
+  passwordAuth: "username:$2y$10$Vh7DlMmcMXs6z/ymQ.dbaOF3hZOJzfcq7C.SHaNUrB4i385lW6vbC"
 # auth -- Available authentication methods.
 # @raw
 # Use username and password provided as a [password file](https://trino.io/docs/current/security/password-file.html#file-format):
@@ -421,7 +422,7 @@ auth: {}
 # ```
 # Set the name of a secret containing this file in the password.db key
 # ```yaml
-#  passwordAuthSecret: "trino-password-authentication"
+  # passwordAuthSecret: "trino-password-secret"
 # ```
 # Additionally, set [users' groups](https://trino.io/docs/current/security/group-file.html#file-format):
 # ```yaml
