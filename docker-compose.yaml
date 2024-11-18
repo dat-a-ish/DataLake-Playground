@@ -168,5 +168,29 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
 
+  flask_app:
+    container_name: flask_app
+    build:
+      context: ./flask_open_api
+    ports:
+      - "5002:5000"
+    networks:
+      data-lake-network:
+    volumes:
+      - ./flask_open_api:/flask_open_api
+    environment:
+      FLASK_ENV: development
+
+  swagger_ui:
+    image: swaggerapi/swagger-ui
+    networks:
+      data-lake-network:
+    ports:
+      - "5001:8080"
+    volumes:
+      - ./flask_open_api/swagger.json:/usr/share/nginx/html/swagger.json
+    environment:
+      SWAGGER_JSON: /swagger.json
+
 networks:
   data-lake-network: 
